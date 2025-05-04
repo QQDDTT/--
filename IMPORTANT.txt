@@ -1,0 +1,16 @@
+nick@nick-Surface-Pro-9:~$ sudo systemctl status iptsd
+[sudo] nick 的密码： 
+● iptsd.service - Intel Precise Touch & Stylus Daemon
+     Loaded: loaded (/etc/systemd/system/iptsd.service; enabled; preset: enable>
+     Active: activating (auto-restart) (Result: exit-code) since Wed 2025-04-09>
+ Invocation: 63a6b38a944542a8b7d00f2f58201640
+    Process: 4612 ExecStart=/usr/bin/iptsd (code=exited, status=106)
+   Main PID: 4612 (code=exited, status=106)
+   Mem peak: 1.7M
+        CPU: 9ms
+lines 1-8/8 (END)
+
+
+
+
+
