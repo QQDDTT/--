@@ -28,10 +28,22 @@ CREATE TABLE user (
 
 DROP TABLE user;
 
+CREATE TABLE animal (name VARCHAR(16) NOT NULL PRIMARY KEY, age INT);
 
+INSERT INTO animal VALUES (name = 'nick', age = 2);
 
-SELECT * FROM user
-WHERE id = "TD10002";
+INSERT INTO animal (name, age) VALUES ('tom', 2), ('jerry', 3);
 
-SELECT * FROM user
-WHERE tel = '080-9199-6093';
+SELECT name FROM animal WHERE age >= 2;
+
+SELECT name, age FROM animal WHERE name = 'dog';
+
+SELECT * FROM user WHERE name_zh LIKE '黃%';
+
+SELECT * FROM user WHERE id = "TD10002";
+
+SELECT * FROM user WHERE tel = '080-9199-6093';
+
+SELECT * FROM user WHERE name_zh LIKE '黃%' AND gender = '女性';
+
+UPDATE animal SET age = 3, name = 'cat' WHERE name = 'dog';
