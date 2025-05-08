@@ -47,3 +47,11 @@ SELECT * FROM user WHERE tel = '080-9199-6093';
 SELECT * FROM user WHERE name_zh LIKE '黃%' AND gender = '女性';
 
 UPDATE animal SET age = 3, name = 'cat' WHERE name = 'dog';
+
+DELETE FROM animal WHERE name = 'cat';
+
+SELECT * FROM animal WHERE name = 'cat';
+
+SELECT COUNT(*) FROM animal;
+
+SELECT COUNT(*) FROM user WHERE name_zhLIKE '黃%' AND gender = '女性';
