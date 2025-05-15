@@ -28,11 +28,34 @@ CREATE TABLE user (
 
 DROP TABLE user;
 
-CREATE TABLE animal (name VARCHAR(16) NOT NULL PRIMARY KEY, age INT);
+CREATE TABLE animal (name VARCHAR(16) NOT NULL PRIMARY KEY, gender VARCHAR(8), type VARCHAR(8), age INT);
+
+DROP TABLE animal;
 
 INSERT INTO animal VALUES (name = 'nick', age = 2);
 
 INSERT INTO animal (name, age) VALUES ('tom', 2), ('jerry', 3);
+
+INSERT INTO animal (name, age, gender, type) VALUES ('tom1', 2, "NULL", "NULL"), ('jerry1', 3, "NULL", "NULL");
+
+INSERT INTO animal (name, age, gender, type) VALUES ('tom2', 2, "", ""), ('jerry2', 3, "", "");
+
+INSERT INTO animal (name, age, gender, type) VALUES ('tom3', 2, " ", " "), ('jerry3', 3, " ", " ");
+
+UPDATE animal SET gender = "man", type = "cat" WHERE name = "jerry";
+
+UPDATE animal SET gender = "man", type = "mouse" WHERE name LIKE "jerry_";
+
+UPDATE animal SET gender = "man", type = "cat" WHERE name LIKE "tom%";
+
+UPDATE animal SET age = 4 WHERE age = 3;
+
+UPDATE animal SET age = 3 WHERE age = 2;
+
+SELECT * FROM animal WHERE 1=1 AND age = 3 AND name LIKE "j%";
+
+UPDATE animal SET age = 4 WHERE age = 3;
+
 
 SELECT name FROM animal WHERE age >= 2;
 
@@ -54,4 +77,14 @@ SELECT * FROM animal WHERE name = 'cat';
 
 SELECT COUNT(*) FROM animal;
 
-SELECT COUNT(*) FROM user WHERE name_zhLIKE '黃%' AND gender = '女性';
+SELECT COUNT(*) FROM user WHERE name_zh LIKE '黃%' AND gender = '女性';
+
+SELECT * FROM animal ORDER BY name DESC;
+
+SELECT * FROM user WHERE name_zh LIKE '黃%' AND gender = '女性' ORDER BY point DESC;
+
+SELECT * FROM user WHERE gender = '女性' LIMIT 10 OFFSET 0;
+
+SELECT * FROM user WHERE gender = '女性' LIMIT 10 OFFSET 10;
+
+SELECT point_permission, cell_permission, COUNT(*) FROM user WHERE gender = '男性' GROUP BY point_permission, cell_permission;
