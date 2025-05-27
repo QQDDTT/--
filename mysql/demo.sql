@@ -88,3 +88,5 @@ SELECT * FROM user WHERE gender = '女性' LIMIT 10 OFFSET 0;
 SELECT * FROM user WHERE gender = '女性' LIMIT 10 OFFSET 10;
 
 SELECT point_permission, cell_permission, COUNT(*) FROM user WHERE gender = '男性' GROUP BY point_permission, cell_permission;
+
+SELECT * FROM animal WHERE name REGEXP '[a-z]+';
