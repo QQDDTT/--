@@ -204,7 +204,8 @@ SELECT
     a.authority_id, a.authority_name
 FROM role r
 RIGHT JOIN role_authority ra ON r.role_id = ra.role_id
-RIGHT JOIN authority a ON ra.authority_id = a.authority_id;
+RIGHT JOIN authority a ON ra.authority_id = a.authority_id
+WHERE a.authority_id = 'TE01';
 
 
 -- 哪些权限未被分配
