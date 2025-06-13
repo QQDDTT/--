@@ -8,7 +8,7 @@
  流程 6[调试，修正]
 
 
-
+```cpp
 #include "quickjs.h"
 #include <iostream>
 #include <fstream>
@@ -42,7 +42,9 @@ JSValue create_complex_object(JSContext *ctx) {
     JS_SetPropertyStr(ctx, obj, "version", JS_NewFloat64(ctx, 1.0));
     return obj;
 }
+```
 
+```cpp
 #include "quickjs.h"
 
 // 创建一个 Map 对象并注入到 JavaScript 全局作用域
@@ -95,7 +97,9 @@ std::string read_script_from_file(const std::string &filename) {
     }
     return buffer.str();
 }
+```
 
+```cpp
 int main() {
     // 创建 QuickJS 运行时
     JSRuntime *rt = JS_NewRuntime();
@@ -132,3 +136,4 @@ int main() {
     JS_FreeRuntime(rt);
     return 0;
 }
+```
